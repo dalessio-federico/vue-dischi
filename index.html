@@ -11,11 +11,21 @@
 </head>
 <body>
     <div class="wrapper" id="root">
-        <div class="logo">
-            <img src="img/17-176153_download-logo-spotify-png.png" alt="">
+        <div class="header">
+            <img src="img/17-176153_download-logo-spotify-png.png" alt="logo">
+            <div class="genere_selection">
+                <label for="genere">Seleziona il genere</label>
+                <select name="genere" id="genere" v-model="gender">
+                    <option value="Rock">Rock</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Metal">Metal</option>
+                    <option value="">All</option>
+                </select>
+            </div>
         </div>
         <div class="main_content">  
-            <div class="song_box" v-for="e in albumList">
+            <div class="song_box" v-for="e in albumList" :class="(e.genre.includes(gender))? null : 'hidden'">
                 <img :src="e.poster" alt="">
                 <h2>{{e.title}}</h2>
                 <p>{{e.author}}</p>

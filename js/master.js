@@ -5,7 +5,8 @@ var root = new Vue({
     el: "#root",
 
     data : {
-        albumList : []
+        albumList : [],
+        gender : ""
     },
 
     mounted(){
