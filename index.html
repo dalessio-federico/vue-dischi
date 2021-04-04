@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper" id="root">
+        <div class="logo">
+            <img src="img/17-176153_download-logo-spotify-png.png" alt="">
+        </div>
+        <div class="main_content">  
+            <div class="song_box" v-for="e in albumList">
+                <img :src="e.poster" alt="">
+                <h2>{{e.title}}</h2>
+                <p>{{e.author}}</p>
+                <p>{{e.year}}</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/master.js"></script>
+</body>
+</html>
