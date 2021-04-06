@@ -6,6 +6,7 @@ var root = new Vue({
 
     data : {
         albumList : [],
+        albumGender : [],
         gender : ""
     },
 
@@ -15,10 +16,16 @@ var root = new Vue({
             .then((r) => 
             {
                 r.data.response.forEach(e => {
-                    this.albumList.push(e)
+                    this.albumList.push(e);
+                    if(this.albumGender.includes(e.genre))
+                    {
+                        null;
+                    }
+                    else
+                    {
+                        this.albumGender.push(e.genre);
+                    }
                 });
-                console.log(this.albumList)
             });
-    } 
-
+    }
 })
